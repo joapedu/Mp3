@@ -5,7 +5,24 @@
   <a href="https://http://linguagemc.com.br/o-que-e-linguagem-c//"><img height= "35" src= "https://img.shields.io/badge/c++-35495E?style=for-the-badge&logo=c&logoColor=4FC08D">&nbsp;&nbsp;&nbsp;&nbsp;</a><img src="https://img.icons8.com/cute-clipart/64/null/services.png"/><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height= "50" src= "https://www.svgrepo.com/show/270190/mp3.svg">
 </a>
 </div>
+<br/>
+#### Autor: Pedro Vinícius Oliveira Maciel Pinho
 
+#### Como compilar:
+
+- Na pasta raiz do projeto, utilize os comandos a seguir:
+
+```c
+cmake -B build
+cmake --build build
+```
+
+- Como rodar:
+   - Utilize o comando a seguir:
+   
+```c
+./build/program
+```
 
 <h3 align="center"> 👾 Colaborador: <a href="https://github.com/joapedu"><strong>@joapedu</strong></a> <br />João Eduardo - 20220035851</h3>
 <h4 align="center">:phone: <i>C O N T A T O S</i> :phone:</h4>
