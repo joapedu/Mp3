@@ -20,10 +20,14 @@ void playlistMenu(LinkedList<Playlist> &playlists){
     int choice;
 
     std::cout << "======================\n";
-    std::cout << "Menu de playlists\n";
+    std::cout << "Menu de playlists 🎶\n";
+    std::cout << "======================\n";
     std::cout << "1. Adicionar playlist\n";
+    std::cout << "\n";
     std::cout << "2. Remover playlist\n";
+    std::cout << "\n";
     std::cout << "3. Listar playlists\n";
+    std::cout << "\n";
     std::cout << "0. Voltar\n";
     std::cout << "Digite sua escolha: ";
 
@@ -98,10 +102,14 @@ void songMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
     int choice;
 
     std::cout << "======================\n";
-    std::cout << "Menu de músicas\n";
+    std::cout << "Menu de músicas 🎵\n";
+    std::cout << "======================\n";
     std::cout << "1. Adicionar música\n";
+    std::cout << "\n";
     std::cout << "2. Remover música\n";
+    std::cout << "\n";
     std::cout << "3. Listar músicas\n";
+    std::cout << "\n";
     std::cout << "0. Voltar\n";
     std::cout << "Digite sua escolha: ";
 
@@ -190,10 +198,14 @@ void songPlaylistMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
     int choice;
 
     std::cout << "======================\n";
-    std::cout << "Gerenciar músicas em playlists\n";
+    std::cout << "Gerenciar músicas em playlists 🎶\n";
+    std::cout << "======================\n";
     std::cout << "1. Adicionar música em playlist\n";
+    std::cout << "\n";
     std::cout << "2. Remover música de playlist\n";
+    std::cout << "\n";
     std::cout << "3. Listar músicas de playlist\n";
+    std::cout << "\n";
     std::cout << "0. Voltar\n";
     std::cout << "Digite sua escolha: ";
 
@@ -357,11 +369,16 @@ int mainMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
 
     std::cout << "======================\n";
     std::cout << "Menu inicial\n";
-    std::cout << "1. Gerenciar playlists\n";
-    std::cout << "2. Gerenciar músicas\n";
-    std::cout << "3. Gerenciar músicas em playlists\n";
-    std::cout << "4. Tocar playlist\n";
-    std::cout << "0. Sair\n";
+    std::cout << "======================\n";
+    std::cout << "1. Gerenciar playlists 🎶\n";
+    std::cout << "\n";
+    std::cout << "2. Gerenciar músicas 🎵\n";
+    std::cout << "\n";
+    std::cout << "3. Gerenciar músicas em playlists 🎶\n";
+    std::cout << "\n";
+    std::cout << "4. Tocar playlist 🎵\n";
+    std::cout << "\n";
+    std::cout << "0. Sair 😥\n";
     std::cout << "Digite sua escolha: ";
 
     std::cin >> choice;
