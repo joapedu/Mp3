@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Playlist: Referência do Arquivo src/menu.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Playlist<span id="projectnumber">&#160;0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhum resultado encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo menu.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Arquivo que implementa as funções relacionadas ao menu.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="Node_8hpp_source.html">Node.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LinkedList_8hpp_source.html">LinkedList.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Song_8hpp_source.html">Song.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Playlist_8hpp_source.html">Playlist.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="menu_8hpp_source.html">menu.hpp</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ae476d435a88302b800f88ce6a2b874ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#ae476d435a88302b800f88ce6a2b874ed">playlistMenu</a> (<a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classPlaylist.html">Playlist</a> &gt; &amp;playlists)</td></tr>
+<tr class="memdesc:ae476d435a88302b800f88ce6a2b874ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu de playlists, que permite adicionar, remover ou listar músicas no sistema.  <br /></td></tr>
+<tr class="separator:ae476d435a88302b800f88ce6a2b874ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9aad79a704885b521c4c144e227b805"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#aa9aad79a704885b521c4c144e227b805">songMenu</a> (<a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classSong.html">Song</a> &gt; &amp;songs, <a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classPlaylist.html">Playlist</a> &gt; &amp;playlists)</td></tr>
+<tr class="memdesc:aa9aad79a704885b521c4c144e227b805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu de músicas, que permite adicionar, remover ou listar músicas no sistema.  <br /></td></tr>
+<tr class="separator:aa9aad79a704885b521c4c144e227b805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a902bae388956c3f6114fe6f4e9ec6733"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#a902bae388956c3f6114fe6f4e9ec6733">songPlaylistMenu</a> (<a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classSong.html">Song</a> &gt; &amp;songs, <a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classPlaylist.html">Playlist</a> &gt; &amp;playlists)</td></tr>
+<tr class="memdesc:a902bae388956c3f6114fe6f4e9ec6733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu de gerenciamento de músicas em playlists, que permite adicionar, remover ou listar músicas nas playlists.  <br /></td></tr>
+<tr class="separator:a902bae388956c3f6114fe6f4e9ec6733"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca1c026897221daf62bf7bc0f687148e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#aca1c026897221daf62bf7bc0f687148e">playSongs</a> (<a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classPlaylist.html">Playlist</a> &gt; &amp;playlists)</td></tr>
+<tr class="memdesc:aca1c026897221daf62bf7bc0f687148e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toca as músicas, em sequência, da playlist selecionada.  <br /></td></tr>
+<tr class="separator:aca1c026897221daf62bf7bc0f687148e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bde1536bea6b8128ccfdb99ae0d7d6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#a3bde1536bea6b8128ccfdb99ae0d7d6f">mainMenu</a> (<a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classSong.html">Song</a> &gt; &amp;songs, <a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classPlaylist.html">Playlist</a> &gt; &amp;playlists)</td></tr>
+<tr class="memdesc:a3bde1536bea6b8128ccfdb99ae0d7d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu principal, que permite chamar os submenus relacionados a músicas e playlists.  <br /></td></tr>
+<tr class="separator:a3bde1536bea6b8128ccfdb99ae0d7d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Arquivo que implementa as funções relacionadas ao menu. </p>
+</div><h2 class="groupheader">Funções</h2>
+<a id="a3bde1536bea6b8128ccfdb99ae0d7d6f" name="a3bde1536bea6b8128ccfdb99ae0d7d6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bde1536bea6b8128ccfdb99ae0d7d6f">&#9670;&#160;</a></span>mainMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mainMenu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classSong.html">Song</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>songs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classPlaylist.html">Playlist</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>playlists</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu principal, que permite chamar os submenus relacionados a músicas e playlists. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">songs</td><td>Lista encadeada (<a class="el" href="classLinkedList.html" title="Classe que implementa uma lista encadeada template.">LinkedList</a>) de músicas (<a class="el" href="classSong.html" title="Classe que representa uma música, contendo título e autor.">Song</a>) do sistema. </td></tr>
+    <tr><td class="paramname">playlists</td><td>Lista encadeada (<a class="el" href="classLinkedList.html" title="Classe que implementa uma lista encadeada template.">LinkedList</a>) de playlists (<a class="el" href="classPlaylist.html" title="Classe que implementa uma playlist, contendo uma lista encadeada (LinkedList) de músicas (Song).">Playlist</a>) do sistema. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Retorna 1 caso o programa seja encerrado, ou 0 caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="ae476d435a88302b800f88ce6a2b874ed" name="ae476d435a88302b800f88ce6a2b874ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae476d435a88302b800f88ce6a2b874ed">&#9670;&#160;</a></span>playlistMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void playlistMenu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classPlaylist.html">Playlist</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>playlists</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu de playlists, que permite adicionar, remover ou listar músicas no sistema. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playlists</td><td>Lista encadeada (<a class="el" href="classLinkedList.html" title="Classe que implementa uma lista encadeada template.">LinkedList</a>) de playlists (<a class="el" href="classPlaylist.html" title="Classe que implementa uma playlist, contendo uma lista encadeada (LinkedList) de músicas (Song).">Playlist</a>) do sistema. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aca1c026897221daf62bf7bc0f687148e" name="aca1c026897221daf62bf7bc0f687148e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca1c026897221daf62bf7bc0f687148e">&#9670;&#160;</a></span>playSongs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void playSongs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classPlaylist.html">Playlist</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>playlists</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Toca as músicas, em sequência, da playlist selecionada. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playlists</td><td>Lista encadeada (<a class="el" href="classLinkedList.html" title="Classe que implementa uma lista encadeada template.">LinkedList</a>) de playlists (<a class="el" href="classPlaylist.html" title="Classe que implementa uma playlist, contendo uma lista encadeada (LinkedList) de músicas (Song).">Playlist</a>) do sistema. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa9aad79a704885b521c4c144e227b805" name="aa9aad79a704885b521c4c144e227b805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9aad79a704885b521c4c144e227b805">&#9670;&#160;</a></span>songMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void songMenu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classSong.html">Song</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>songs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classPlaylist.html">Playlist</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>playlists</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu de músicas, que permite adicionar, remover ou listar músicas no sistema. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">songs</td><td>Lista encadeada (<a class="el" href="classLinkedList.html" title="Classe que implementa uma lista encadeada template.">LinkedList</a>) de músicas (<a class="el" href="classSong.html" title="Classe que representa uma música, contendo título e autor.">Song</a>) do sistema. </td></tr>
+    <tr><td class="paramname">playlists</td><td>Lista encadeada (<a class="el" href="classLinkedList.html" title="Classe que implementa uma lista encadeada template.">LinkedList</a>) de playlists (<a class="el" href="classPlaylist.html" title="Classe que implementa uma playlist, contendo uma lista encadeada (LinkedList) de músicas (Song).">Playlist</a>) do sistema. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a902bae388956c3f6114fe6f4e9ec6733" name="a902bae388956c3f6114fe6f4e9ec6733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a902bae388956c3f6114fe6f4e9ec6733">&#9670;&#160;</a></span>songPlaylistMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void songPlaylistMenu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classSong.html">Song</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>songs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classLinkedList.html">LinkedList</a>&lt; <a class="el" href="classPlaylist.html">Playlist</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>playlists</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Menu de gerenciamento de músicas em playlists, que permite adicionar, remover ou listar músicas nas playlists. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">songs</td><td>Lista encadeada (<a class="el" href="classLinkedList.html" title="Classe que implementa uma lista encadeada template.">LinkedList</a>) de músicas (<a class="el" href="classSong.html" title="Classe que representa uma música, contendo título e autor.">Song</a>) do sistema. </td></tr>
+    <tr><td class="paramname">playlists</td><td>Lista encadeada (<a class="el" href="classLinkedList.html" title="Classe que implementa uma lista encadeada template.">LinkedList</a>) de playlists (<a class="el" href="classPlaylist.html" title="Classe que implementa uma playlist, contendo uma lista encadeada (LinkedList) de músicas (Song).">Playlist</a>) do sistema. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

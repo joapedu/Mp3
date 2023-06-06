@@ -1,0 +1,119 @@
+\hypertarget{menu_8cpp}{}\doxysection{Referência do Arquivo src/menu.cpp}
+\label{menu_8cpp}\index{src/menu.cpp@{src/menu.cpp}}
+
+
+Arquivo que implementa as funções relacionadas ao menu.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Node.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Linked\+List.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Song.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Playlist.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}menu.\+hpp\char`\"{}}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8cpp_ae476d435a88302b800f88ce6a2b874ed}{playlist\+Menu}} (\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ \&playlists)
+\begin{DoxyCompactList}\small\item\em Menu de playlists, que permite adicionar, remover ou listar músicas no sistema. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8cpp_aa9aad79a704885b521c4c144e227b805}{song\+Menu}} (\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classSong}{Song}} $>$ \&songs, \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ \&playlists)
+\begin{DoxyCompactList}\small\item\em Menu de músicas, que permite adicionar, remover ou listar músicas no sistema. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8cpp_a902bae388956c3f6114fe6f4e9ec6733}{song\+Playlist\+Menu}} (\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classSong}{Song}} $>$ \&songs, \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ \&playlists)
+\begin{DoxyCompactList}\small\item\em Menu de gerenciamento de músicas em playlists, que permite adicionar, remover ou listar músicas nas playlists. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8cpp_aca1c026897221daf62bf7bc0f687148e}{play\+Songs}} (\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ \&playlists)
+\begin{DoxyCompactList}\small\item\em Toca as músicas, em sequência, da playlist selecionada. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8cpp_a3bde1536bea6b8128ccfdb99ae0d7d6f}{main\+Menu}} (\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classSong}{Song}} $>$ \&songs, \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ \&playlists)
+\begin{DoxyCompactList}\small\item\em Menu principal, que permite chamar os submenus relacionados a músicas e playlists. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Arquivo que implementa as funções relacionadas ao menu. 
+
+
+
+\doxysubsection{Funções}
+\mbox{\Hypertarget{menu_8cpp_a3bde1536bea6b8128ccfdb99ae0d7d6f}\label{menu_8cpp_a3bde1536bea6b8128ccfdb99ae0d7d6f}} 
+\index{menu.cpp@{menu.cpp}!mainMenu@{mainMenu}}
+\index{mainMenu@{mainMenu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{mainMenu()}{mainMenu()}}
+{\footnotesize\ttfamily int main\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classSong}{Song}} $>$ \&}]{songs,  }\item[{\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ \&}]{playlists }\end{DoxyParamCaption})}
+
+
+
+Menu principal, que permite chamar os submenus relacionados a músicas e playlists. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em songs} & Lista encadeada (\mbox{\hyperlink{classLinkedList}{Linked\+List}}) de músicas (\mbox{\hyperlink{classSong}{Song}}) do sistema. \\
+\hline
+{\em playlists} & Lista encadeada (\mbox{\hyperlink{classLinkedList}{Linked\+List}}) de playlists (\mbox{\hyperlink{classPlaylist}{Playlist}}) do sistema. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Retorna 1 caso o programa seja encerrado, ou 0 caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{menu_8cpp_ae476d435a88302b800f88ce6a2b874ed}\label{menu_8cpp_ae476d435a88302b800f88ce6a2b874ed}} 
+\index{menu.cpp@{menu.cpp}!playlistMenu@{playlistMenu}}
+\index{playlistMenu@{playlistMenu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{playlistMenu()}{playlistMenu()}}
+{\footnotesize\ttfamily void playlist\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ \&}]{playlists }\end{DoxyParamCaption})}
+
+
+
+Menu de playlists, que permite adicionar, remover ou listar músicas no sistema. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em playlists} & Lista encadeada (\mbox{\hyperlink{classLinkedList}{Linked\+List}}) de playlists (\mbox{\hyperlink{classPlaylist}{Playlist}}) do sistema. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{menu_8cpp_aca1c026897221daf62bf7bc0f687148e}\label{menu_8cpp_aca1c026897221daf62bf7bc0f687148e}} 
+\index{menu.cpp@{menu.cpp}!playSongs@{playSongs}}
+\index{playSongs@{playSongs}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{playSongs()}{playSongs()}}
+{\footnotesize\ttfamily void play\+Songs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ \&}]{playlists }\end{DoxyParamCaption})}
+
+
+
+Toca as músicas, em sequência, da playlist selecionada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em playlists} & Lista encadeada (\mbox{\hyperlink{classLinkedList}{Linked\+List}}) de playlists (\mbox{\hyperlink{classPlaylist}{Playlist}}) do sistema. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{menu_8cpp_aa9aad79a704885b521c4c144e227b805}\label{menu_8cpp_aa9aad79a704885b521c4c144e227b805}} 
+\index{menu.cpp@{menu.cpp}!songMenu@{songMenu}}
+\index{songMenu@{songMenu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{songMenu()}{songMenu()}}
+{\footnotesize\ttfamily void song\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classSong}{Song}} $>$ \&}]{songs,  }\item[{\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ \&}]{playlists }\end{DoxyParamCaption})}
+
+
+
+Menu de músicas, que permite adicionar, remover ou listar músicas no sistema. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em songs} & Lista encadeada (\mbox{\hyperlink{classLinkedList}{Linked\+List}}) de músicas (\mbox{\hyperlink{classSong}{Song}}) do sistema. \\
+\hline
+{\em playlists} & Lista encadeada (\mbox{\hyperlink{classLinkedList}{Linked\+List}}) de playlists (\mbox{\hyperlink{classPlaylist}{Playlist}}) do sistema. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{menu_8cpp_a902bae388956c3f6114fe6f4e9ec6733}\label{menu_8cpp_a902bae388956c3f6114fe6f4e9ec6733}} 
+\index{menu.cpp@{menu.cpp}!songPlaylistMenu@{songPlaylistMenu}}
+\index{songPlaylistMenu@{songPlaylistMenu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{songPlaylistMenu()}{songPlaylistMenu()}}
+{\footnotesize\ttfamily void song\+Playlist\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classSong}{Song}} $>$ \&}]{songs,  }\item[{\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ \&}]{playlists }\end{DoxyParamCaption})}
+
+
+
+Menu de gerenciamento de músicas em playlists, que permite adicionar, remover ou listar músicas nas playlists. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em songs} & Lista encadeada (\mbox{\hyperlink{classLinkedList}{Linked\+List}}) de músicas (\mbox{\hyperlink{classSong}{Song}}) do sistema. \\
+\hline
+{\em playlists} & Lista encadeada (\mbox{\hyperlink{classLinkedList}{Linked\+List}}) de playlists (\mbox{\hyperlink{classPlaylist}{Playlist}}) do sistema. \\
+\hline
+\end{DoxyParams}

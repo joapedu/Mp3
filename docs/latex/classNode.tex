@@ -1,0 +1,132 @@
+\hypertarget{classNode}{}\doxysection{Referência do \texorpdfstring{$<$}{<}em\texorpdfstring{$>$}{>}Template\texorpdfstring{$<$}{<}/em\texorpdfstring{$>$}{>} da Classe Node\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}
+\label{classNode}\index{Node$<$ T $>$@{Node$<$ T $>$}}
+
+
+Classe que implementa um nó de uma lista encadeada (\mbox{\hyperlink{classLinkedList}{Linked\+List}}) template.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+hpp$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNode_a8cac26d874ba0871f753215795d112c8}{Node}} (T \&\mbox{\hyperlink{classNode_a01b9071c0de774c720b64583262d1559}{value}})
+\begin{DoxyCompactList}\small\item\em Construtor que recebe o valor a ser colocado no nó. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classNode_afed926f6766c33afba668af82936fb1e}{get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o valor do nó. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classNode_a688501032615bbd05c9f42ef89d63db5}{get\+Next}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o ponteiro para o próximo nó na lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_afdabc78643a5cbab194de94274fa4f8d}{set\+Value}} (T \mbox{\hyperlink{classNode_a01b9071c0de774c720b64583262d1559}{value}})
+\begin{DoxyCompactList}\small\item\em Altera o valor do nó. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_a486348d99412bba1c889db7dd63ca8cb}{set\+Next}} (\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$\mbox{\hyperlink{classNode_a8bedac90cd0aedd2847dd49f671d4d4a}{next}})
+\begin{DoxyCompactList}\small\item\em Altera o ponteiro para o próximo elemento. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNode_a01b9071c0de774c720b64583262d1559}\label{classNode_a01b9071c0de774c720b64583262d1559}} 
+T {\bfseries value}
+\begin{DoxyCompactList}\small\item\em Valor do nó atual da lista encadeada. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNode_a8bedac90cd0aedd2847dd49f671d4d4a}\label{classNode_a8bedac90cd0aedd2847dd49f671d4d4a}} 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries next}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o próximo nó da lista encadeada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+\subsubsection*{template$<$typename T$>$\newline
+class Node$<$ T $>$}
+Classe que implementa um nó de uma lista encadeada (\mbox{\hyperlink{classLinkedList}{Linked\+List}}) template. 
+
+
+\begin{DoxyTemplParams}{Parâmetros do $<$em$>$template$<$/em$>$}
+{\em T} & Tipo do valor armazenado no nó. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{classNode_a8cac26d874ba0871f753215795d112c8}\label{classNode_a8cac26d874ba0871f753215795d112c8}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!Node@{Node}}
+\index{Node@{Node}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$\mbox{\hyperlink{classNode}{\+::\+Node}} (\begin{DoxyParamCaption}\item[{T \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Construtor que recebe o valor a ser colocado no nó. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & Valor do nó. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{classNode_a688501032615bbd05c9f42ef89d63db5}\label{classNode_a688501032615bbd05c9f42ef89d63db5}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!getNext@{getNext}}
+\index{getNext@{getNext}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNext()}{getNext()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classNode}{Node}}$<$ T $>$\+::get\+Next}
+
+
+
+Retorna o ponteiro para o próximo nó na lista. 
+
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o próximo nó. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNode_afed926f6766c33afba668af82936fb1e}\label{classNode_afed926f6766c33afba668af82936fb1e}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!getValue@{getValue}}
+\index{getValue@{getValue}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{classNode}{Node}}$<$ T $>$\+::get\+Value}
+
+
+
+Retorna o valor do nó. 
+
+\begin{DoxyReturn}{Retorna}
+Valor do nó. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNode_a486348d99412bba1c889db7dd63ca8cb}\label{classNode_a486348d99412bba1c889db7dd63ca8cb}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!setNext@{setNext}}
+\index{setNext@{setNext}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setNext()}{setNext()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classNode}{Node}}$<$ T $>$\+::set\+Next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$}]{next }\end{DoxyParamCaption})}
+
+
+
+Altera o ponteiro para o próximo elemento. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em next} & Novo ponteiro. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNode_afdabc78643a5cbab194de94274fa4f8d}\label{classNode_afdabc78643a5cbab194de94274fa4f8d}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!setValue@{setValue}}
+\index{setValue@{setValue}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classNode}{Node}}$<$ T $>$\+::set\+Value (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})}
+
+
+
+Altera o valor do nó. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & Novo valor. \\
+\hline
+\end{DoxyParams}
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Node_8hpp}{Node.\+hpp}}\end{DoxyCompactItemize}

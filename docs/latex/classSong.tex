@@ -1,0 +1,157 @@
+\hypertarget{classSong}{}\doxysection{Referência da Classe Song}
+\label{classSong}\index{Song@{Song}}
+
+
+Classe que representa uma música, contendo título e autor.  
+
+
+
+
+{\ttfamily \#include $<$Song.\+hpp$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSong_a1a73ff262627ce78860ec622859cf249}{Song}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da música. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSong_a85b61d954dc14e0051f9ae34bfceb161}{Song}} (std\+::string \mbox{\hyperlink{classSong_acb0239ffa443b0a31277ed4e74b2f712}{title}}, std\+::string \mbox{\hyperlink{classSong_a7c50abba61c627bec744965f1ccde5ee}{author}}=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Construtor da música que recebe título e autor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSong_a2e425562035750f813876b239d388d4e}{get\+Title}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o título da música. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSong_ad72d1bb43a19e4c84f1f883bd48f49db}{get\+Author}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o autor da música. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSong_a6b585f51e48a7063675da6d125467b6e}{set\+Title}} (std\+::string \mbox{\hyperlink{classSong_acb0239ffa443b0a31277ed4e74b2f712}{title}})
+\begin{DoxyCompactList}\small\item\em Altera o título da música. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSong_aee431bcb08d17340d9eb3b6e1f990e36}{set\+Author}} (std\+::string \mbox{\hyperlink{classSong_a7c50abba61c627bec744965f1ccde5ee}{author}})
+\begin{DoxyCompactList}\small\item\em Altera o autor da música. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSong_ac219465a6c41f5a9c40a980b012cf51e}{operator==}} (\mbox{\hyperlink{classSong}{Song}} \&b)
+\begin{DoxyCompactList}\small\item\em Sobrecarga do operador de igualdade, que compara o título de duas músicas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSong_acb0239ffa443b0a31277ed4e74b2f712}\label{classSong_acb0239ffa443b0a31277ed4e74b2f712}} 
+std\+::string {\bfseries title}
+\begin{DoxyCompactList}\small\item\em Título da música. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSong_a7c50abba61c627bec744965f1ccde5ee}\label{classSong_a7c50abba61c627bec744965f1ccde5ee}} 
+std\+::string {\bfseries author}
+\begin{DoxyCompactList}\small\item\em Autor da música. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSong_af4b22db0bdb516c1bfa852d88197ffaa}\label{classSong_af4b22db0bdb516c1bfa852d88197ffaa}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{classSong}{Song}} \&song)
+\begin{DoxyCompactList}\small\item\em Sobrecarga do operador de inserção da música. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Classe que representa uma música, contendo título e autor. 
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{classSong_a1a73ff262627ce78860ec622859cf249}\label{classSong_a1a73ff262627ce78860ec622859cf249}} 
+\index{Song@{Song}!Song@{Song}}
+\index{Song@{Song}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{Song()}{Song()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Song\+::\+Song (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor padrão da música. 
+
+\mbox{\Hypertarget{classSong_a85b61d954dc14e0051f9ae34bfceb161}\label{classSong_a85b61d954dc14e0051f9ae34bfceb161}} 
+\index{Song@{Song}!Song@{Song}}
+\index{Song@{Song}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{Song()}{Song()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Song\+::\+Song (\begin{DoxyParamCaption}\item[{std\+::string}]{title,  }\item[{std\+::string}]{author = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Construtor da música que recebe título e autor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em title} & Título da música. \\
+\hline
+{\em author} & (Opcional) Autor da música. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{classSong_ad72d1bb43a19e4c84f1f883bd48f49db}\label{classSong_ad72d1bb43a19e4c84f1f883bd48f49db}} 
+\index{Song@{Song}!getAuthor@{getAuthor}}
+\index{getAuthor@{getAuthor}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{getAuthor()}{getAuthor()}}
+{\footnotesize\ttfamily std\+::string Song\+::get\+Author (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o autor da música. 
+
+\begin{DoxyReturn}{Retorna}
+Autor da música. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSong_a2e425562035750f813876b239d388d4e}\label{classSong_a2e425562035750f813876b239d388d4e}} 
+\index{Song@{Song}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily std\+::string Song\+::get\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o título da música. 
+
+\begin{DoxyReturn}{Retorna}
+Título da música. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSong_ac219465a6c41f5a9c40a980b012cf51e}\label{classSong_ac219465a6c41f5a9c40a980b012cf51e}} 
+\index{Song@{Song}!operator==@{operator==}}
+\index{operator==@{operator==}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Song\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSong}{Song}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Sobrecarga do operador de igualdade, que compara o título de duas músicas. 
+
+\begin{DoxyNote}{Observação}
+Duas músicas com títulos iguais e autores diferentes serão consideradas iguais.
+\end{DoxyNote}
+\begin{DoxyReturn}{Retorna}
+Retorna true caso o título das músicas seja igual, e false caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSong_aee431bcb08d17340d9eb3b6e1f990e36}\label{classSong_aee431bcb08d17340d9eb3b6e1f990e36}} 
+\index{Song@{Song}!setAuthor@{setAuthor}}
+\index{setAuthor@{setAuthor}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{setAuthor()}{setAuthor()}}
+{\footnotesize\ttfamily void Song\+::set\+Author (\begin{DoxyParamCaption}\item[{std\+::string}]{author }\end{DoxyParamCaption})}
+
+
+
+Altera o autor da música. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em author} & Novo autor. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSong_a6b585f51e48a7063675da6d125467b6e}\label{classSong_a6b585f51e48a7063675da6d125467b6e}} 
+\index{Song@{Song}!setTitle@{setTitle}}
+\index{setTitle@{setTitle}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{setTitle()}{setTitle()}}
+{\footnotesize\ttfamily void Song\+::set\+Title (\begin{DoxyParamCaption}\item[{std\+::string}]{title }\end{DoxyParamCaption})}
+
+
+
+Altera o título da música. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em title} & Novo título. \\
+\hline
+\end{DoxyParams}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Song_8hpp}{Song.\+hpp}}\item 
+src/\mbox{\hyperlink{Song_8cpp}{Song.\+cpp}}\end{DoxyCompactItemize}

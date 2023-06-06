@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Playlist: Código-Fonte de include/Playlist.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Playlist<span id="projectnumber">&#160;0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhum resultado encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Playlist.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Playlist_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef PLAYLIST_HPP</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define PLAYLIST_HPP</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="Node_8hpp.html">Node.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="LinkedList_8hpp.html">LinkedList.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="Song_8hpp.html">Song.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classPlaylist.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="classPlaylist.html">Playlist</a>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classPlaylist.html#a6b06305db2f4b7bfadccd994665501cf">   21</a></span>    std::string <a class="code hl_variable" href="classPlaylist.html#a6b06305db2f4b7bfadccd994665501cf">name</a>; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classPlaylist.html#a8b52ddd17bdfb997b6fc3d4b7dffab51">   22</a></span>    <a class="code hl_class" href="classLinkedList.html">LinkedList&lt;Song&gt;</a> <a class="code hl_variable" href="classPlaylist.html#a8b52ddd17bdfb997b6fc3d4b7dffab51">songs</a>; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// Construtor padrão da playlist. </span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="classPlaylist.html#aef38d55e42995be147977726350f3ada">Playlist</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Construtor da playlist que recebe seu nome. </span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="classPlaylist.html#aef38d55e42995be147977726350f3ada">Playlist</a>(std::string <a class="code hl_variable" href="classPlaylist.html#a6b06305db2f4b7bfadccd994665501cf">name</a>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// Destrutor da playlist, que remove todas as músicas. </span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="classPlaylist.html#aacd9a69e347fc19a9a0787d7a7ce9df4">~Playlist</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// Retorna o tamanho da playlist.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classPlaylist.html#af3a8ab6fa7f62859baa8173a50f26b19">getSize</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Retorna o nome da playlist. </span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::string <a class="code hl_function" href="classPlaylist.html#a569ad905cc657c46f25b210a21186b2f">getName</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// Retorna uma referência para a lista encadeada de músicas. </span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="classLinkedList.html">LinkedList&lt;Song&gt;</a> &amp;<a class="code hl_function" href="classPlaylist.html#aac4307b74043ebea56f9d58d878610e3">getSongs</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// Adiciona uma música à playlist. </span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlaylist.html#ac17509b05b7fa10e6dcddc9f8f4e5505">addSong</a>(<a class="code hl_class" href="classSong.html">Song</a> song);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// Remove a música especificada da playlist. </span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlaylist.html#a24705f9fab96b139fdde8d83b72c92d8">removeSong</a>(<a class="code hl_class" href="classSong.html">Song</a> song);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// Procura uma música na playlist. </span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_class" href="classSong.html">Song</a> *<a class="code hl_function" href="classPlaylist.html#a83c6fbdd8a835b8a9f4138768a2247ca">searchSong</a>(<a class="code hl_class" href="classSong.html">Song</a> song);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// Imprime as músicas da playlist. </span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlaylist.html#a352cd7aa99543baffb7aa2466d71bd96">printSongs</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">// Sobrecarga de operador de igualdade. </span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classPlaylist.html#a94e801ded5e47f21aa2ff1120803f485">operator==</a>(<a class="code hl_class" href="classPlaylist.html">Playlist</a> &amp;b);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// Sobrecarga de operador de inserção da playlist. </span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">friend</span> std::ostream&amp; <a class="code hl_friend" href="classPlaylist.html#ac8b7197bb01eeb56e0f366ae60a2ec18">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_class" href="classPlaylist.html">Playlist</a>&amp; playlist);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aLinkedList_8hpp_html"><div class="ttname"><a href="LinkedList_8hpp.html">LinkedList.hpp</a></div><div class="ttdoc">Arquivo que contém a classe LinkedList.</div></div>
+<div class="ttc" id="aNode_8hpp_html"><div class="ttname"><a href="Node_8hpp.html">Node.hpp</a></div><div class="ttdoc">Arquivo que contém a classe Node.</div></div>
+<div class="ttc" id="aSong_8hpp_html"><div class="ttname"><a href="Song_8hpp.html">Song.hpp</a></div><div class="ttdoc">Arquivo que contém a classe Song.</div></div>
+<div class="ttc" id="aclassLinkedList_html"><div class="ttname"><a href="classLinkedList.html">LinkedList</a></div><div class="ttdoc">Classe que implementa uma lista encadeada template.</div><div class="ttdef"><b>Definition:</b> LinkedList.hpp:19</div></div>
+<div class="ttc" id="aclassPlaylist_html"><div class="ttname"><a href="classPlaylist.html">Playlist</a></div><div class="ttdoc">Classe que implementa uma playlist, contendo uma lista encadeada (LinkedList) de músicas (Song).</div><div class="ttdef"><b>Definition:</b> Playlist.hpp:18</div></div>
+<div class="ttc" id="aclassPlaylist_html_a24705f9fab96b139fdde8d83b72c92d8"><div class="ttname"><a href="classPlaylist.html#a24705f9fab96b139fdde8d83b72c92d8">Playlist::removeSong</a></div><div class="ttdeci">void removeSong(Song song)</div><div class="ttdoc">Remove a música especificada da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:76</div></div>
+<div class="ttc" id="aclassPlaylist_html_a352cd7aa99543baffb7aa2466d71bd96"><div class="ttname"><a href="classPlaylist.html#a352cd7aa99543baffb7aa2466d71bd96">Playlist::printSongs</a></div><div class="ttdeci">void printSongs()</div><div class="ttdoc">Imprime as músicas da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:94</div></div>
+<div class="ttc" id="aclassPlaylist_html_a569ad905cc657c46f25b210a21186b2f"><div class="ttname"><a href="classPlaylist.html#a569ad905cc657c46f25b210a21186b2f">Playlist::getName</a></div><div class="ttdeci">std::string getName()</div><div class="ttdoc">Retorna o nome da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:49</div></div>
+<div class="ttc" id="aclassPlaylist_html_a6b06305db2f4b7bfadccd994665501cf"><div class="ttname"><a href="classPlaylist.html#a6b06305db2f4b7bfadccd994665501cf">Playlist::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">Nome da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.hpp:21</div></div>
+<div class="ttc" id="aclassPlaylist_html_a83c6fbdd8a835b8a9f4138768a2247ca"><div class="ttname"><a href="classPlaylist.html#a83c6fbdd8a835b8a9f4138768a2247ca">Playlist::searchSong</a></div><div class="ttdeci">Song * searchSong(Song song)</div><div class="ttdoc">Procura uma música na playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:87</div></div>
+<div class="ttc" id="aclassPlaylist_html_a8b52ddd17bdfb997b6fc3d4b7dffab51"><div class="ttname"><a href="classPlaylist.html#a8b52ddd17bdfb997b6fc3d4b7dffab51">Playlist::songs</a></div><div class="ttdeci">LinkedList&lt; Song &gt; songs</div><div class="ttdoc">Lista de músicas da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.hpp:22</div></div>
+<div class="ttc" id="aclassPlaylist_html_a94e801ded5e47f21aa2ff1120803f485"><div class="ttname"><a href="classPlaylist.html#a94e801ded5e47f21aa2ff1120803f485">Playlist::operator==</a></div><div class="ttdeci">bool operator==(Playlist &amp;b)</div><div class="ttdoc">Sobrecarga de operador de igualdade.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:104</div></div>
+<div class="ttc" id="aclassPlaylist_html_aac4307b74043ebea56f9d58d878610e3"><div class="ttname"><a href="classPlaylist.html#aac4307b74043ebea56f9d58d878610e3">Playlist::getSongs</a></div><div class="ttdeci">LinkedList&lt; Song &gt; &amp; getSongs()</div><div class="ttdoc">Retorna uma referência para a lista encadeada de músicas.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:58</div></div>
+<div class="ttc" id="aclassPlaylist_html_aacd9a69e347fc19a9a0787d7a7ce9df4"><div class="ttname"><a href="classPlaylist.html#aacd9a69e347fc19a9a0787d7a7ce9df4">Playlist::~Playlist</a></div><div class="ttdeci">~Playlist()</div><div class="ttdoc">Destrutor da playlist, que remove todas as músicas.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:31</div></div>
+<div class="ttc" id="aclassPlaylist_html_ac17509b05b7fa10e6dcddc9f8f4e5505"><div class="ttname"><a href="classPlaylist.html#ac17509b05b7fa10e6dcddc9f8f4e5505">Playlist::addSong</a></div><div class="ttdeci">void addSong(Song song)</div><div class="ttdoc">Adiciona uma música à playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:67</div></div>
+<div class="ttc" id="aclassPlaylist_html_ac8b7197bb01eeb56e0f366ae60a2ec18"><div class="ttname"><a href="classPlaylist.html#ac8b7197bb01eeb56e0f366ae60a2ec18">Playlist::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Playlist &amp;playlist)</div><div class="ttdoc">Sobrecarga de operador de inserção da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:111</div></div>
+<div class="ttc" id="aclassPlaylist_html_aef38d55e42995be147977726350f3ada"><div class="ttname"><a href="classPlaylist.html#aef38d55e42995be147977726350f3ada">Playlist::Playlist</a></div><div class="ttdeci">Playlist()</div><div class="ttdoc">Construtor padrão da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:15</div></div>
+<div class="ttc" id="aclassPlaylist_html_af3a8ab6fa7f62859baa8173a50f26b19"><div class="ttname"><a href="classPlaylist.html#af3a8ab6fa7f62859baa8173a50f26b19">Playlist::getSize</a></div><div class="ttdeci">size_t getSize()</div><div class="ttdoc">Retorna o tamanho da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:40</div></div>
+<div class="ttc" id="aclassSong_html"><div class="ttname"><a href="classSong.html">Song</a></div><div class="ttdoc">Classe que representa uma música, contendo título e autor.</div><div class="ttdef"><b>Definition:</b> Song.hpp:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,56 @@
+\hypertarget{Node_8hpp_source}{}\doxysection{Node.\+hpp}
+\label{Node_8hpp_source}\index{include/Node.hpp@{include/Node.hpp}}
+\mbox{\hyperlink{Node_8hpp}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ NODE\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ NODE\_HPP}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNode}{Node}}\{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ T\ \mbox{\hyperlink{classNode_a01b9071c0de774c720b64583262d1559}{value}};\ }
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classNode}{Node<T>}}\ *\mbox{\hyperlink{classNode_a8bedac90cd0aedd2847dd49f671d4d4a}{next}};\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//Construtor\ que\ recebe\ o\ valor\ a\ ser\ colocado\ no\ nó.}}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classNode_a8cac26d874ba0871f753215795d112c8}{Node}}(T\ \&\mbox{\hyperlink{classNode_a01b9071c0de774c720b64583262d1559}{value}});}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//Retorna\ o\ valor\ do\ nó\ atual.}}
+\DoxyCodeLine{00024\ \ \ \ \ T\ \&\mbox{\hyperlink{classNode_afed926f6766c33afba668af82936fb1e}{getValue}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//Retorna\ o\ ponteiro\ para\ o\ próximo\ nó.}}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classNode}{Node}}\ *\mbox{\hyperlink{classNode_a688501032615bbd05c9f42ef89d63db5}{getNext}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//Altera\ o\ valor\ do\ nó\ atual.}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNode_afdabc78643a5cbab194de94274fa4f8d}{setValue}}(T\ \mbox{\hyperlink{classNode_a01b9071c0de774c720b64583262d1559}{value}});}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//Altera\ o\ ponteiro\ para\ o\ próximo\ nó.}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNode_a486348d99412bba1c889db7dd63ca8cb}{setNext}}(\mbox{\hyperlink{classNode}{Node<T>}}\ *\mbox{\hyperlink{classNode_a8bedac90cd0aedd2847dd49f671d4d4a}{next}});}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00039\ \mbox{\hyperlink{classNode_a8cac26d874ba0871f753215795d112c8}{Node<T>::Node}}(T\ \&value)\{}
+\DoxyCodeLine{00040\ \ \ \ \ setValue(value);}
+\DoxyCodeLine{00041\ \ \ \ \ setNext(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00050\ T\ \&\mbox{\hyperlink{classNode_afed926f6766c33afba668af82936fb1e}{Node<T>::getValue}}()\{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00052\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00060\ \mbox{\hyperlink{classNode}{Node<T>}}\ *\mbox{\hyperlink{classNode_a688501032615bbd05c9f42ef89d63db5}{Node<T>::getNext}}()\{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{return}\ next;}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNode_afdabc78643a5cbab194de94274fa4f8d}{Node<T>::setValue}}(T\ value)\{}
+\DoxyCodeLine{00071\ \ \ \ \ this-\/>value\ =\ value;}
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNode_a486348d99412bba1c889db7dd63ca8cb}{Node<T>::setNext}}(\mbox{\hyperlink{classNode}{Node<T>}}\ *next)\{}
+\DoxyCodeLine{00081\ \ \ \ \ this-\/>next\ =\ next;}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
