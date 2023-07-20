@@ -1,3 +1,3 @@
-playlist rap;Caminhos:BK,Junho de 94:Djonga,Favela Vive:ADL
-playlist rock;Polly:Nirvana,Smoke On The Water:Deep Purple
-playlist funk;
+rap;Caminhos:BK,Junho de 94:Djonga,Favela Vive:ADL
+rock;Polly:Nirvana,Smoke On The Water:Deep Purple
+forro;
