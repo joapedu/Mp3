@@ -1,121 +1,79 @@
-/**
- * @file menu.cpp
- * @brief Arquivo que implementa as funções relacionadas ao menu.
- */
-
 #include <iostream>
 #include <string>
-#include "Node.hpp"
-#include "LinkedList.hpp"
-#include "Song.hpp"
-#include "Playlist.hpp"
-#include "menu.hpp"
+#include "../include/no.hpp"
+#include "../include/listaencadeada.hpp"
+#include "../include/musica.hpp"
+#include "../include/playlist.hpp"
+#include "../include/menu.hpp"
 
-/**
- * @brief Menu de playlists, que permite adicionar, remover ou listar músicas no sistema.
- * 
- * @param playlists Lista encadeada (LinkedList) de playlists (Playlist) do sistema.
- */
-void playlistMenu(LinkedList<Playlist> &playlists){
-    int choice;
+//principal menu
+int menuPrincipal(ListaEncadeada<Musica> &musicas, ListaEncadeada<Playlist> &playlists){
+    int escolha;
 
-    std::cout << "======================\n";
-    std::cout << "Menu de playlists\n";
-    std::cout << "1. Adicionar playlist\n";
-    std::cout << "2. Remover playlist\n";
-    std::cout << "3. Listar playlists\n";
-    std::cout << "0. Voltar\n";
-    std::cout << "Digite sua escolha: ";
+    std::cout << "Menu MP3\n";
+    std::cout << "1. Área das playlists\n";
+    std::cout << "2. Área das músicas\n";
+    std::cout << "3. Área das músicas dentro das playlists\n";
+    std::cout << "4. Tocar playlist\n";
+    std::cout << "0. Sair\n";
+    std::cout << "Digite o comando: ";
 
-    std::cin >> choice;
+    std::cin >> escolha;
     std::cin.ignore();
 
-    std::string line;
-
-    switch(choice){
-        case 1: // Adicionar playlist
-            std::cout << "Digite o nome da playlist para adicionar, ou deixe em branco para cancelar:\n";
-            std::getline(std::cin, line);
-            if(line != "") {
-                if(playlists.searchValue(Playlist(line)) != nullptr){
-                    std::cout << "Erro: A playlist \"" << line << "\" já existe.\n";
-                }
-                else{
-                    playlists.add(Playlist(line));
-                    std::cout << "Playlist \"" << line << "\" adicionada com sucesso.\n";
-                }
-            }
-            else{
-                std::cout << "Ação cancelada.\n";
-            }
+    switch(escolha){
+        case 1: 
+            menuPlaylist(playlists); 
             break;
 
-        case 2: // Remover playlist
-            std::cout << "Digite o nome da playlist para remover, ou deixe em branco para cancelar:\n";
-            std::getline(std::cin, line);
-            if(line != ""){
-                if(playlists.searchValue(Playlist(line)) == nullptr){
-                    std::cout << "Erro: Playlist inválida.\n";
-                }
-                else{
-                    playlists.removeValue(Playlist(line));
-                    std::cout << "Playlist \"" << line << "\" removida com sucesso.\n";
-                }
-            }
-            else{
-                std::cout << "Ação cancelada.\n";
-            }
+        case 2: 
+            menuMusica(musicas, playlists); 
             break;
 
-        case 3: // Listar playlists
-            if(playlists.getSize() == 0){
-                std::cout << "Nenhuma playlist cadastrada.\n";
-            }
-            else{
-                std::cout << "Playlists:\n";
-                playlists.print();
-            }
+        case 3:
+            menuMusicaPlaylist(musicas, playlists);
+            break;
+        
+        case 4:
+            tocarMusicas(playlists);
             break;
 
-        case 0:
-            return;
+        case 0: 
+            std::cout << "Até Mais!.\n";
+            return 1;
 
-        default: // Escolha inválida
-            std::cout << "Erro: Escolha inválida!\n";
+        default: 
+            std::cout << "Erro: Escolha inválida!\n"; 
+            std::cout << "Pressione ENTER para continuar.";
+            std::cin.get();
             break;
-    }
-    std::cout << "Pressione ENTER para continuar.";
-    std::cin.get();
+    } 
+
+    return 0;
 }
 
-/**
- * @brief Menu de músicas, que permite adicionar, remover ou listar músicas no sistema.
- * 
- * @param songs Lista encadeada (LinkedList) de músicas (Song) do sistema.
- * @param playlists Lista encadeada (LinkedList) de playlists (Playlist) do sistema.
- */
-void songMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
-    int choice;
+// menu de musicas
+void menuMusica(ListaEncadeada<Musica> &musicas, ListaEncadeada<Playlist> &playlists){
+    int escolha;
 
-    std::cout << "======================\n";
-    std::cout << "Menu de músicas\n";
-    std::cout << "1. Adicionar música\n";
-    std::cout << "2. Remover música\n";
-    std::cout << "3. Listar músicas\n";
+    std::cout << "Área das músicas\n";
+    std::cout << "1. Adicionar Título\n";
+    std::cout << "2. Remover Título\n";
+    std::cout << "3. Listar Músicas\n";
     std::cout << "0. Voltar\n";
-    std::cout << "Digite sua escolha: ";
+    std::cout << "Digite o comando: ";
 
-    std::cin >> choice;
+    std::cin >> escolha;
     std::cin.ignore();
 
     std::string line;
 
-    switch(choice){
+    switch(escolha){
         case 1: {// Adicionar música
             std::cout << "Digite o nome da música para adicionar, ou deixe em branco para cancelar:\n";
             std::getline(std::cin, line);
             if(line != "") {
-                if(songs.searchValue(Song(line)) != nullptr){
+                if(musicas.buscarValor(Musica(line)) != nullptr){
                     std::cout << "Erro: A música \"" << line << "\" já existe.\n";
                 }
                 else{
@@ -123,7 +81,7 @@ void songMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
                     std::cout << "Digite o nome do autor:\n";
                     std::getline(std::cin, author);
 
-                    songs.add(Song(line, author));
+                    musicas.adicionar(Musica(line, author));
                     std::cout << "Música \"" << line << "\" adicionada com sucesso.\n";
                 }
             }
@@ -132,22 +90,22 @@ void songMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
             }
             break;
         }
-
+                
         case 2: // Remover música
             std::cout << "Digite o nome da música para remover, ou deixe em branco para cancelar:\n";
             std::getline(std::cin, line);
             if(line != ""){
-                if(songs.searchValue(Song(line)) == nullptr){
+                if(musicas.buscarValor(Musica(line)) == nullptr){
                     std::cout << "Erro: Música inválida.\n";
                 }
                 else{
-                    songs.removeValue(Song(line));
+                    musicas.removerValor(Musica(line));
 
-                    Node<Playlist> *curr = playlists.getHead();
+                    No<Playlist> *curr = playlists.getCabeca();
 
                     while(curr != nullptr){
-                        curr->getValue().removeSong(Song(line));
-                        curr = curr->getNext();
+                        curr->getValor().removerMusica(Musica(line));
+                        curr = curr->getProximo();
                     }
 
                     std::cout << "Música \"" << line << "\" removida com sucesso.\n";
@@ -159,12 +117,12 @@ void songMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
             break;
 
         case 3: // Listar músicas
-            if(songs.getSize() == 0){
+            if(musicas.getTamanho() == 0){
                 std::cout << "Nenhuma música cadastrada.\n";
             }
             else{
                 std::cout << "Músicas:\n";
-                songs.print();
+                musicas.imprimir();
             }
             break;
 
@@ -179,28 +137,164 @@ void songMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
     std::cin.get();
 }
 
-/**
- * @brief Menu de gerenciamento de músicas em playlists, que permite adicionar, remover ou listar
- * músicas nas playlists.
- * 
- * @param songs Lista encadeada (LinkedList) de músicas (Song) do sistema.
- * @param playlists Lista encadeada (LinkedList) de playlists (Playlist) do sistema.
- */
-void songPlaylistMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
-    int choice;
+//tocar musicas selecionadas
+void tocarMusicas(ListaEncadeada<Playlist> &playlists){
+    std::string line;
+    std::cout << "Selecione a playlist para tocar, ou deixe em branco para cancelar:\n";
+    std::getline(std::cin, line);
 
-    std::cout << "======================\n";
-    std::cout << "Gerenciar músicas em playlists\n";
-    std::cout << "1. Adicionar música em playlist\n";
-    std::cout << "2. Remover música de playlist\n";
-    std::cout << "3. Listar músicas de playlist\n";
+    if(line == ""){
+        std::cout << "Ação cancelada.\n";
+        std::cout << "Pressione ENTER para continuar.";
+        std::cin.get();
+        return;
+    }
+
+    Playlist *pl = playlists.buscarValor(Playlist(line));
+
+    if(pl == nullptr) {
+        std::cout << "Erro: Playlist inválida.\n";
+        std::cout << "Pressione ENTER para continuar.";
+        std::cin.get();
+        return;
+    }
+
+    if(pl->getTamanho() == 0){
+        std::cout << "A playlist \"" << pl->getNome() << "\" não tem nenhuma música.\n";
+        std::cout << "Pressione ENTER para continuar.";
+        std::cin.get();
+        return;
+    }
+
+    int end = 0;
+    int count = 1;
+    No<Musica> *curr = pl->getMusicas().getCabeca();
+
+    while(end == 0){
+        int escolha;
+
+        std::cout << "Tocando playlist \"" << pl->getNome() <<"\".\n";
+        std::cout << "Música " << count << " de " << pl->getTamanho() << ":\n";
+        std::cout << curr->getValor() << "\n";
+        if(curr->getProximo() == nullptr){
+            std::cout << "Última música da playlist.\n";
+        }
+        else{
+            std::cout << "Próxima música: " << curr->getProximo()->getValor() << "\n";
+        }
+        std::cout << "1. Tocar Título seguinte\n";
+        std::cout << "0. Parar de tocar\n";
+        std::cout << "Digite sua escolha: ";
+
+        std::cin >> escolha;
+        std::cin.ignore();
+
+        if(escolha == 1){
+            curr = curr->getProximo();
+            count++;
+        }
+        else{
+            end = 1;
+        }
+
+        if(curr == nullptr){
+            std::cout << "A playlist acabou.\n";
+            std::cout << "Pressione ENTER para continuar.";
+            std::cin.get();
+            end = 1;
+        }
+        
+    }
+    
+}
+
+// menu de playlist
+void menuPlaylist(ListaEncadeada<Playlist> &playlists){
+    int escolha;
+
+    std::cout << "Menu de Playlists\n";
+    std::cout << "1. Adicionar Playlist\n";
+    std::cout << "2. Remover Playlist\n";
+    std::cout << "3. Listar Playlists\n";
     std::cout << "0. Voltar\n";
     std::cout << "Digite sua escolha: ";
 
-    std::cin >> choice;
+    std::cin >> escolha;
     std::cin.ignore();
 
-    if(choice == 0) return;
+    std::string line;
+
+    switch(escolha){
+        case 1: // Adicionar playlist
+            std::cout << "Digite o nome da playlist para adicionar, ou deixe em branco para cancelar:\n";
+            std::getline(std::cin, line);
+            if(line != "") {
+                if(playlists.buscarValor(Playlist(line)) != nullptr){
+                    std::cout << "Erro: A playlist \"" << line << "\" já existe.\n";
+                }
+                else{
+                    playlists.adicionar(Playlist(line));
+                    std::cout << "Playlist \"" << line << "\" adicionada com sucesso.\n";
+                }
+            }
+            else{
+                std::cout << "Ação cancelada.\n";
+            }
+            break;
+                
+        case 2: // Remover playlist
+            std::cout << "Digite o nome da playlist para remover, ou deixe em branco para cancelar:\n";
+            std::getline(std::cin, line);
+            if(line != ""){
+                if(playlists.buscarValor(Playlist(line)) == nullptr){
+                    std::cout << "Erro: Playlist inválida.\n";
+                }
+                else{
+                    playlists.removerValor(Playlist(line));
+                    std::cout << "Playlist \"" << line << "\" removida com sucesso.\n";
+                }
+            }
+            else{
+                std::cout << "Ação cancelada.\n";
+            }
+            break;
+
+        case 3: // Listar playlists
+            if(playlists.getTamanho() == 0){
+                std::cout << "Nenhuma playlist cadastrada.\n";
+            }
+            else{
+                std::cout << "Playlists:\n";
+                playlists.imprimir();
+            }
+            break;
+
+        case 0:
+            return;
+
+        default: // Escolha inválida
+            std::cout << "Erro: Escolha inválida!\n";
+            break;
+    }
+    std::cout << "Pressione ENTER para continuar.";
+    std::cin.get();
+}
+
+/// musicas dentro da playlist
+void menuMusicaPlaylist(ListaEncadeada<Musica> &musicas, ListaEncadeada<Playlist> &playlists){
+    int escolha;
+
+    std::cout << "Alterar Músicas nas Playlists\n";
+    std::cout << "1. Adicionar Música em Playlist\n";
+    std::cout << "2. Remover Música de Playlist\n";
+    std::cout << "3. Listar Músicas de Playlist\n";
+    std::cout << "0. Voltar\n";
+    std::cout << "Digite sua escolha: ";
+
+    std::cin >> escolha;
+    std::cin.ignore();
+
+    if(escolha == 0) return;
 
     std::string line;
 
@@ -214,7 +308,7 @@ void songPlaylistMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
         return;
     }
 
-    Playlist *pl = playlists.searchValue(Playlist(line));
+    Playlist *pl = playlists.buscarValor(Playlist(line));
 
     if(pl == nullptr){
         std::cout << "Erro: Playlist inválida.\n";
@@ -223,22 +317,22 @@ void songPlaylistMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
         return;
     }
 
-    switch(choice){
+    switch(escolha){
         case 1: { // Adicionar música em playlist
             std::cout << "Digite o nome da música para adicionar:\n";
             std::getline(std::cin, line);
-            Song* musica = songs.searchValue(Song(line));
+            Musica* musica = musicas.buscarValor(Musica(line));
 
             //Caso música não exista no sistema
             if(musica == nullptr){ 
                 std::cout << "Erro: Música inválida. Adicione a música ao sistema primeiro.\n";
             }
             //Caso música já esteja na playlist
-            else if(pl->searchSong(*musica) != nullptr){
+            else if(pl->buscarMusica(*musica) != nullptr){
                 std::cout << "Erro: Música já está na playlist.\n";
             }
             else{
-                pl->addSong(*musica);
+                pl->adicionarMusica(*musica);
                 std::cout << "Música adicionada com sucesso.\n";
             }
             break;
@@ -247,8 +341,8 @@ void songPlaylistMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
             std::cout << "Digite o nome da música para remover:\n";
             std::getline(std::cin, line);
 
-            if(pl->searchSong(Song(line)) != nullptr){
-                pl->removeSong(Song(line));
+            if(pl->buscarMusica(Musica(line)) != nullptr){
+                pl->removerMusica(Musica(line));
                 std::cout << "Música removida com sucesso.\n";
             }
             else{
@@ -256,144 +350,15 @@ void songPlaylistMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
             }
             break;
         case 3: // Listar músicas de playlist
-            if(pl->getSize() > 0){
-                std::cout << "Músicas da playlist \"" << pl->getName() << "\":\n";
-                pl->printSongs();
+            if(pl->getTamanho() > 0){
+                std::cout << "Músicas da playlist \"" << pl->getNome() << "\":\n";
+                pl->imprimirMusicas();
             }
             else{
-                std::cout << "A playlist \"" << pl->getName() << "\" não possui músicas.\n";
+                std::cout << "A playlist \"" << pl->getNome() << "\" não possui músicas.\n";
             }
             break;
     }
     std::cout << "Pressione ENTER para continuar.";
     std::cin.get();
-}
-
-/**
- * @brief Toca as músicas, em sequência, da playlist selecionada.
- * 
- * @param playlists Lista encadeada (LinkedList) de playlists (Playlist) do sistema.
- */
-void playSongs(LinkedList<Playlist> &playlists){
-    std::string line;
-    std::cout << "Selecione a playlist para tocar, ou deixe em branco para cancelar:\n";
-    std::getline(std::cin, line);
-
-    if(line == ""){
-        std::cout << "Ação cancelada.\n";
-        std::cout << "Pressione ENTER para continuar.";
-        std::cin.get();
-        return;
-    }
-
-    Playlist *pl = playlists.searchValue(Playlist(line));
-
-    if(pl == nullptr) {
-        std::cout << "Erro: Playlist inválida.\n";
-        std::cout << "Pressione ENTER para continuar.";
-        std::cin.get();
-        return;
-    }
-
-    if(pl->getSize() == 0){
-        std::cout << "A playlist \"" << pl->getName() << "\" não tem nenhuma música.\n";
-        std::cout << "Pressione ENTER para continuar.";
-        std::cin.get();
-        return;
-    }
-
-    int end = 0;
-    int count = 1;
-    Node<Song> *curr = pl->getSongs().getHead();
-
-    while(end == 0){
-        int choice;
-
-        std::cout << "======================\n";
-        std::cout << "Tocando playlist \"" << pl->getName() <<"\".\n";
-        std::cout << "Música " << count << " de " << pl->getSize() << ":\n";
-        std::cout << curr->getValue() << "\n";
-        if(curr->getNext() == nullptr){
-            std::cout << "Última música da playlist.\n";
-        }
-        else{
-            std::cout << "Próxima música: " << curr->getNext()->getValue() << "\n";
-        }
-        std::cout << "1. Tocar próxima música\n";
-        std::cout << "0. Parar de tocar\n";
-        std::cout << "Digite sua escolha: ";
-
-        std::cin >> choice;
-        std::cin.ignore();
-
-        if(choice == 1){
-            curr = curr->getNext();
-            count++;
-        }
-        else{
-            end = 1;
-        }
-
-        if(curr == nullptr){
-            std::cout << "A playlist acabou.\n";
-            std::cout << "Pressione ENTER para continuar.";
-            std::cin.get();
-            end = 1;
-        }
-
-    }
-
-}
-
-/**
- * @brief Menu principal, que permite chamar os submenus relacionados a músicas e playlists.
- * 
- * @param songs Lista encadeada (LinkedList) de músicas (Song) do sistema.
- * @param playlists Lista encadeada (LinkedList) de playlists (Playlist) do sistema.
- * @return Retorna 1 caso o programa seja encerrado, ou 0 caso contrário.
- */
-int mainMenu(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
-    int choice;
-
-    std::cout << "======================\n";
-    std::cout << "Menu inicial\n";
-    std::cout << "1. Gerenciar playlists\n";
-    std::cout << "2. Gerenciar músicas\n";
-    std::cout << "3. Gerenciar músicas em playlists\n";
-    std::cout << "4. Tocar playlist\n";
-    std::cout << "0. Sair\n";
-    std::cout << "Digite sua escolha: ";
-
-    std::cin >> choice;
-    std::cin.ignore();
-
-    switch(choice){
-        case 1: 
-            playlistMenu(playlists); 
-            break;
-
-        case 2: 
-            songMenu(songs, playlists); 
-            break;
-
-        case 3:
-            songPlaylistMenu(songs, playlists);
-            break;
-
-        case 4:
-            playSongs(playlists);
-            break;
-
-        case 0: 
-            std::cout << "Programa encerrado.\n";
-            return 1;
-
-        default: 
-            std::cout << "Erro: Escolha inválida!\n"; 
-            std::cout << "Pressione ENTER para continuar.";
-            std::cin.get();
-            break;
-    } 
-
-    return 0;
 }

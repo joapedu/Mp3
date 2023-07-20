@@ -1,86 +1,110 @@
-/**
- * @file main.cpp
- * @brief Arquivo principal do programa.
- */
-
 #include <iostream>
 #include <string>
-#include "Node.hpp"
-#include "LinkedList.hpp"
-#include "Song.hpp"
-#include "Playlist.hpp"
-#include "menu.hpp"
+#include <fstream>
+#include <sstream>
 
-/**
- * @brief Setup inicial do programa, que adiciona exemplos de
- * músicas e playlists para demonstrar as funcionalidades do
- * programa.
- * 
- * @param songs Lista encadeada (LinkedList) de músicas (Song) do sistema.
- * @param playlists Lista encadeada (LinkedList) de playlists (Playlist) do sistema.
- */
-void setup(LinkedList<Song> &songs, LinkedList<Playlist> &playlists){
-    int choice;
+#include "../include/no.hpp"
+#include "../include/listaencadeada.hpp"
+#include "../include/musica.hpp"
+#include "../include/playlist.hpp"
+#include "../include/menu.hpp"
 
-    std::cout << "Deseja executar o setup inicial? Isso irá adicionar\n" <<
-                 "alguns exemplos de músicas e playlists\n";
-    std::cout << "1. Sim\n";
-    std::cout << "0. Não\n";
-    std::cout << "Digite sua escolha: ";
+//carega o arquivo e adiciona as playlists e músicas ao sistema.
+void parseFile(std::ifstream& in_file, ListaEncadeada<Musica>& songs, ListaEncadeada<Playlist> &playlists){
+    std::string linha;
+    while(std::getline(in_file, linha)){
+        std::istringstream iss{linha};
+        std::string playlist_titulo;
+        std::getline(iss, playlist_titulo, ';');
+        
+        Playlist playlist{playlist_titulo};
+        playlists.adicionar(playlist);
 
-    std::cin >> choice;
-    std::cin.ignore();
+        std::string song_string;
+        while(std::getline(iss, song_string, ',')){
+            std::istringstream iss_song{song_string};
+            std::string musica_titulo;
+            std::string musica_autor;
 
-    if(choice == 0) return;
+            std::getline(iss_song, musica_titulo, ':');
+            std::getline(iss_song, musica_autor);
 
-    Song mus1("Música 1", "Autor 1");
-    Song mus2("Música 2", "Autor 2");
-    Song mus3("Música 3", "Autor 3");
-    Song mus4("Música 4", "Autor 4");
+            Musica Musica{musica_titulo, musica_autor};
+            songs.adicionar(Musica);
 
-    Playlist pl1("Playlist 1");
-    Playlist pl2("Playlist 2");
-    Playlist pl3("Playlist 3");
-
-    songs.add(mus1);
-    songs.add(mus2);
-    songs.add(mus3);
-    songs.add(mus4);
-
-    playlists.add(pl1);
-    playlists.add(pl2);
-    playlists.add(pl3);
-
-    auto pl1ptr = playlists.searchValue(pl1);
-    auto pl2ptr = playlists.searchValue(pl2);
-    auto pl3ptr = playlists.searchValue(pl3);
-
-    pl1ptr->addSong(mus1);
-    pl1ptr->addSong(mus2);
-    pl1ptr->addSong(mus3);
-
-    pl2ptr->addSong(mus1);
-    pl2ptr->addSong(mus4);
-
-    std::cout << "Setup completo\n";
-    std::cout << "Pressione ENTER para continuar.";
-    std::cin.get();
+            playlists.buscarValor(playlist)->adicionarMusica(Musica);
+        }
+    }
 }
 
-int main(){
-    LinkedList<Playlist> playlists;
-    LinkedList<Song> songs;
+//salva playlists e músicas do sistema ao arquivo.
+void writeFile(std::ofstream& out_file, ListaEncadeada<Musica>& musicas, ListaEncadeada<Playlist>& playlists){
+    auto plRunner = playlists.getCabeca();
 
-    setup(songs, playlists);
+    while(plRunner != nullptr){
+        auto currPl = plRunner->getValor();
+
+        out_file << currPl.getNome() << ';';
+
+        auto songRunner = currPl.getMusicas().getCabeca();
+
+        while(songRunner != nullptr){
+            auto currSong = songRunner->getValor();
+
+            out_file << currSong.getTitulo() << ':';
+            out_file << currSong.getAutor();
+
+            if(songRunner->getProximo() != nullptr){
+                out_file << ',';
+            }
+
+            songRunner = songRunner->getProximo();
+        }
+
+        out_file << '\n';
+        plRunner = plRunner->getProximo();
+    }
+}
+
+//função principal
+int main(int argc, char *argv[]){
+    ListaEncadeada<Playlist> playlists;
+    ListaEncadeada<Musica> musicas;
+
+    if(argc != 2){
+        std::cout << "Número de argumentos inválido! "
+                  << "Esperado 1 argumento (nome do arquivo).\n";
+        return 1;
+    }
+    
+    std::ifstream in_file;
+    in_file.open(argv[1]);
+
+    if(!in_file.is_open()){
+        std::cout << "Não foi possível abrir o arquivo \"" 
+                  << argv[1] << "\"!\n";
+        return 1;
+    }
+    
+    parseFile(in_file, musicas, playlists);
+
+    in_file.close();
 
     int exit{0};
 
     while(exit == 0){
-        exit = mainMenu(songs, playlists);
+        exit = menuPrincipal(musicas, playlists);
     }
 
-    playlists.clear();
-    songs.clear();
+    std::ofstream out_file;
+    out_file.open(argv[1]);
+
+    writeFile(out_file, musicas, playlists);
+
+    out_file.close();
+
+    playlists.limpar();
+    musicas.limpar();
 
     return 0;
 }
