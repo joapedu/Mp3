@@ -1,0 +1,90 @@
+\doxysection{playlist.\+hpp}
+\hypertarget{playlist_8hpp_source}{}\label{playlist_8hpp_source}\index{include/playlist.hpp@{include/playlist.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PLAYLIST\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PLAYLIST\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}no.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}listaencadeada.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}musica.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//classe\ que\ implementa\ uma\ playlist}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPlaylist}{Playlist}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ \mbox{\hyperlink{classPlaylist_aaf8a5fd7bf6683f2a4a73f35a63cceb3}{nome}};\ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<Musica>}}\ \mbox{\hyperlink{classPlaylist_a6fbfbc8ed6915f2365268a549d00a854}{musicas}};\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//construtor\ padrão\ }}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{Playlist}}();}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//construtor\ da\ playlist\ que\ recebe\ seu\ nome\ }}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{Playlist}}(std::string\ \mbox{\hyperlink{classPlaylist_aaf8a5fd7bf6683f2a4a73f35a63cceb3}{nome}});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//construtor\ cópia\ da\ playlist}}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{Playlist}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlaylist}{Playlist}}\ \&outra);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//destrutor\ da\ playlist,\ que\ remove\ todas\ as\ músicas\ }}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{\string~Playlist}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//tamanho\ da\ playlist}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ getTamanho();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//nome\ da\ playlist\ }}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&getNome()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//referência\ para\ a\ lista\ encadeada\ de\ músicas\ }}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<Musica>}}\ \&getMusicas();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//adiciona\ uma\ música\ à\ playlist\ }}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ adicionarMusica(\mbox{\hyperlink{classMusica}{Musica}}\ \&musica);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//adiciona\ todas\ as\ músicas\ de\ uma\ outra\ playlist\ à\ playlist}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ adicionarMusica(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlaylist}{Playlist}}\ \&playlist);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//remove\ a\ música\ especificada\ da\ playlist\ }}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ removerMusica(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMusica}{Musica}}\ \&musica);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//remove\ todas\ as\ músicas\ de\ uma\ outra\ playlist\ da\ playlist}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ removerMusica(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlaylist}{Playlist}}\ \&playlist);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//procura\ uma\ música\ na\ playlist\ }}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classMusica}{Musica}}\ *buscarMusica(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMusica}{Musica}}\ \&musica);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//imprime\ as\ músicas\ da\ playlist\ }}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ imprimirMusicas();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ igualdade\ }}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\mbox{\hyperlink{classPlaylist}{Playlist}}\ \&outra);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ união\ de\ playlists}}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{Playlist}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlaylist}{Playlist}}\ \&outra);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ união\ de\ playlist\ com\ música}}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{Playlist}}\ operator+(\mbox{\hyperlink{classMusica}{Musica}}\ \&musica);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ diferença\ de\ playlists}}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{Playlist}}\ operator-\/(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlaylist}{Playlist}}\ \&outra);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ diferença\ de\ playlist\ com\ música}}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{Playlist}}\ operator-\/(\mbox{\hyperlink{classMusica}{Musica}}\ \&musica);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ atribuição\ de\ playlist}}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{Playlist}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPlaylist}{Playlist}}\ \&outra);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ extração\ de\ música\ de\ uma\ playlist}}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{Playlist}}\&\ operator>>(\mbox{\hyperlink{classMusica}{Musica}}\ \&musica);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ inserção\ de\ música\ em\ playlist}}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{Playlist}}\&\ operator<<(\mbox{\hyperlink{classMusica}{Musica}}\ \&musica);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ inserção\ de\ playlist\ }}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPlaylist}{Playlist}}\&\ playlist);}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

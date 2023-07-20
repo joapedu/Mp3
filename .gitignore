@@ -16,7 +16,6 @@
 *.pch
 .vscode
 .cache
-docs
 build
 compile_commands.json
 

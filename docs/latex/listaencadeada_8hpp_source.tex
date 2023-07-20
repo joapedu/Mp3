@@ -1,0 +1,299 @@
+\doxysection{listaencadeada.\+hpp}
+\hypertarget{listaencadeada_8hpp_source}{}\label{listaencadeada_8hpp_source}\index{include/listaencadeada.hpp@{include/listaencadeada.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LISTAENCADEADA\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LISTAENCADEADA\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}musica.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}no.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ classe\ que\ implementa\ a\ lista\ encadeada}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classListaEncadeada}{ListaEncadeada}}\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *cabeca;}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *cauda;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//construtor\ da\ lista\ encadeada.\ }}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada}}();}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//construtor\ cópia\ da\ lista\ encadeada.}}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \&outra);}
+\DoxyCodeLine{00023\ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//destrutor\ da\ lista\ encadeada,\ que\ remove\ todos\ os\ elementos.}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classListaEncadeada}{\string~ListaEncadeada}}();}
+\DoxyCodeLine{00026\ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//remove\ todos\ os\ elementos\ da\ lista.\ }}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ limpar();}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//retorna\ o\ tamanho\ da\ lista\ encadeada.\ }}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ getTamanho()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//retorna\ o\ início\ da\ lista.\ }}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *getCabeca()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//retorna\ o\ final\ da\ lista.\ }}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *getCauda()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//altera\ o\ ponteiro\ cabeça\ da\ lista.\ }}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ setCabeca(\mbox{\hyperlink{classNo}{No<T>}}\ *cabeca);}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//altera\ o\ ponteiro\ cauda\ da\ lista.\ }}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ setCauda(\mbox{\hyperlink{classNo}{No<T>}}\ *cauda);}
+\DoxyCodeLine{00044\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//adiciona\ um\ novo\ elemento\ com\ valor\ especificado\ ao\ final\ da\ lista.\ }}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ adicionar(T\ valor);}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//adiciona\ todos\ os\ elementos\ de\ uma\ lista\ ao\ final\ da\ lista.}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ adicionar(\textcolor{keyword}{const}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \&outra);}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//procura\ um\ elemento\ específico\ na\ lista.\ }}
+\DoxyCodeLine{00052\ \ \ \ \ T\ *buscarValor(T\ valor);}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//remove\ o\ elemento\ no\ índice\ especificado\ da\ lista.}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ removerFinal();}
+\DoxyCodeLine{00056\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//remove\ o\ elemento\ especificado\ da\ lista.\ }}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ removerValor(T\ valor);}
+\DoxyCodeLine{00059\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//remove\ todos\ os\ elementos\ de\ uma\ lista\ da\ lista.}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ removerValor(\mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \&outra);}
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//imprime\ todos\ os\ elementos\ da\ lista\ recursivamente.\ }}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ imprimir();}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ soma,\ que\ concatena\ duas\ listas.}}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ operator+(\mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \&outra);}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ extração,\ que\ remove\ um\ elemento\ da\ lista.}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \&operator>>(\mbox{\hyperlink{classNo}{No<T>}}\ \&no);}
+\DoxyCodeLine{00071\ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ inserção,\ que\ adiciona\ um\ elemento\ à\ lista.}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ operator<<(\textcolor{keyword}{const}\ \mbox{\hyperlink{classNo}{No<T>}}\ \&no);}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{//construtor}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00078\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::ListaEncadeada}}()\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ cabeca\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00080\ \ \ \ \ cauda\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00084\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::ListaEncadeada}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \&outra)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ cabeca\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00086\ \ \ \ \ cauda\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ adicionar(outra);}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{//destrutor\ da\ lista\ encadeada,\ que\ remove\ todos\ os\ elementos.}}
+\DoxyCodeLine{00092\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00093\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::\string~ListaEncadeada}}()\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ limpar();}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{//remove\ todos\ os\ elementos\ da\ lista}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::limpar}}()\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *anterior\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *atual\ =\ cabeca;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ anterior\ =\ atual;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>getProximo();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ anterior;}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ cabeca\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00109\ \ \ \ \ cauda\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{//traz\ o\ tamanho\ da\ lista}}
+\DoxyCodeLine{00113\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::getTamanho}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ tamanho\ =\ 0;}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *atual\ =\ cabeca;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>getProximo();}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ tamanho++;}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{return}\ tamanho;}
+\DoxyCodeLine{00123\ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{comment}{//retorna\ a\ cabeça\ da\ lista}}
+\DoxyCodeLine{00126\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00127\ \mbox{\hyperlink{classNo}{No<T>}}\ *\mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::getCabeca}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{return}\ cabeca;}
+\DoxyCodeLine{00129\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{comment}{//retorna\ o\ final\ da\ lista\ \ }}
+\DoxyCodeLine{00132\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00133\ \mbox{\hyperlink{classNo}{No<T>}}\ *\mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::getCauda}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{return}\ cauda;}
+\DoxyCodeLine{00135\ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{comment}{//altera\ o\ ponteiro\ incial\ da\ lista}}
+\DoxyCodeLine{00138\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00139\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::setCabeca}}(\mbox{\hyperlink{classNo}{No<T>}}\ *cabeca)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ this-\/>cabeca\ =\ cabeca;}
+\DoxyCodeLine{00141\ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{comment}{//altera\ o\ ponteiro\ final}}
+\DoxyCodeLine{00144\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::setCauda}}(\mbox{\hyperlink{classNo}{No<T>}}\ *cauda)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ this-\/>cauda\ =\ cauda;}
+\DoxyCodeLine{00147\ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{comment}{//coloca\ um\ elemento\ especifico\ ao\ final\ da\ lista}}
+\DoxyCodeLine{00150\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00151\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::adicionar}}(T\ valor)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *novoNo\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classNo}{No<T>}}(valor);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ a\ lista\ é\ vazia}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{if}\ (cabeca\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ cabeca\ =\ novoNo;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ cauda\ =\ novoNo;}
+\DoxyCodeLine{00158\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ cauda-\/>setProximo(novoNo);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ cauda\ =\ novoNo;}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{comment}{//adiciona\ uma\ lista\ ao\ final\ da\ outra\ lista.}}
+\DoxyCodeLine{00165\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00166\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::adicionar}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \&outra)\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *noAtual\ =\ outra.getCabeca();}
+\DoxyCodeLine{00168\ \ \ \ \ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{while}\ (noAtual\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ this-\/>adicionar(noAtual-\/>getValor());}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ noAtual\ =\ noAtual-\/>getProximo();}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{comment}{//procura\ um\ elementom\ da\ lista}}
+\DoxyCodeLine{00176\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00177\ T\ *\mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::buscarValor}}(T\ valor)\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *atual\ =\ cabeca;}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>getValor()\ ==\ valor)\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&(atual-\/>getValor());}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>getProximo();}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00187\ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{comment}{//remove\ o\ elemento\ de\ um\ indíce}}
+\DoxyCodeLine{00190\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00191\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::removerFinal}}()\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *atual\ =\ cabeca;}
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *anterior\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual-\/>getProximo()\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ anterior\ =\ atual;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>getProximo();}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{if}\ (anterior\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ anterior-\/>setProximo(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ cauda\ =\ anterior;}
+\DoxyCodeLine{00203\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ cabeca\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ cauda\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00206\ \ \ \ \ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keyword}{delete}\ atual;}
+\DoxyCodeLine{00209\ \}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \textcolor{comment}{//remove\ o\ elemento\ especifico\ da\ lista.}}
+\DoxyCodeLine{00212\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00213\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::removerValor}}(T\ valor)\ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *atual\ =\ cabeca;}
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *anterior\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>getValor()\ ==\ valor)\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (anterior\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anterior-\/>setProximo(atual-\/>getProximo());}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual\ ==\ cauda)\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cauda\ =\ anterior;}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cabeca\ =\ atual-\/>getProximo();}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cabeca\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cauda\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ atual;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ anterior\ =\ atual;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>getProximo();}
+\DoxyCodeLine{00235\ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00237\ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{comment}{//remove\ o\ elementos\ de\ uma\ lista\ da\ lista.}}
+\DoxyCodeLine{00240\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00241\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::removerValor}}(\mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \&outra)\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \mbox{\hyperlink{classNo}{No<T>}}\ *noAtual\ =\ outra.getCabeca();}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{while}\ (noAtual\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ removerValor(noAtual-\/>getValor());}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ noAtual\ =\ noAtual-\/>getProximo();}
+\DoxyCodeLine{00247\ \ \ \ \ \}}
+\DoxyCodeLine{00248\ \}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \textcolor{comment}{//imprime\ os\ elementos\ da\ lista\ utilizando\ recursão}}
+\DoxyCodeLine{00251\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00252\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::imprimir}}()\ \{}
+\DoxyCodeLine{00253\ \ \ \ \ imprimirAux(cabeca);}
+\DoxyCodeLine{00254\ \}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \textcolor{comment}{//auxiliar\ para\ a\ função\ imprimir}}
+\DoxyCodeLine{00257\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00258\ \textcolor{keywordtype}{void}\ imprimirAux(\mbox{\hyperlink{classNo}{No<T>}}\ *atual)\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{if}\ (atual\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ std::cout\ <<\ atual-\/>getValor()\ <<\ std::endl;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ imprimirAux(atual-\/>getProximo());}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{comment}{//sobrecarga\ de\ soma}}
+\DoxyCodeLine{00266\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00267\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::operator+}}(\mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \&outra)\ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ novaLista;}
+\DoxyCodeLine{00269\ \ \ \ \ novaLista.adicionar(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00270\ \ \ \ \ novaLista.adicionar(outra);}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordflow}{return}\ novaLista;}
+\DoxyCodeLine{00273\ \}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ extração}}
+\DoxyCodeLine{00276\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00277\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \&\mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::operator>>}}(\mbox{\hyperlink{classNo}{No<T>}}\ \&no)\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordflow}{if}\ (cabeca\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ no\ =\ *cauda;}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ removerFinal();}
+\DoxyCodeLine{00281\ \ \ \ \ \}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00284\ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \textcolor{comment}{//sobrecarga\ de\ operador\ de\ inserção}}
+\DoxyCodeLine{00287\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00288\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>}}\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<T>::operator<<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classNo}{No<T>}}\ \&no)\ \{}
+\DoxyCodeLine{00289\ \ \ \ \ adicionar(no.getValor());}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00291\ \}}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
