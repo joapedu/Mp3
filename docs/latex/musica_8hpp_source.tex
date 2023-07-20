@@ -5,42 +5,33 @@
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MUSICA\_HPP}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MUSICA\_HPP}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{comment}{//\ classe\ de\ uma\ música}}
-\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMusica}{Musica}}\ \{}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00011\ \ \ \ \ std::string\ titulo;}
-\DoxyCodeLine{00012\ \ \ \ \ std::string\ autor;}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//construtor\ padrão.}}
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classMusica}{Musica}}();}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//construtor\ que\ recebe\ título\ e\ autor.}}
-\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classMusica}{Musica}}(std::string\ titulo,\ std::string\ autor\ =\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//título\ da\ música.}}
-\DoxyCodeLine{00022\ \ \ \ \ std::string\ getTitulo();}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//autor\ da\ música.}}
-\DoxyCodeLine{00025\ \ \ \ \ std::string\ getAutor();}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//altera\ o\ título\ da\ música.}}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setTitulo(std::string\ titulo);}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMusica}{Musica}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ std::string\ \mbox{\hyperlink{classMusica_a18a3f34e8fc4f2187c8b925a9ff01891}{titulo}};\ }
+\DoxyCodeLine{00014\ \ \ std::string\ \mbox{\hyperlink{classMusica_aa2e92ffdcbabd86f666cfda756348eb7}{autor}};\ \ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{classMusica_a435c4de75bd638108bf9caae58000e18}{Musica}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{classMusica_a435c4de75bd638108bf9caae58000e18}{Musica}}(std::string\ \mbox{\hyperlink{classMusica_a18a3f34e8fc4f2187c8b925a9ff01891}{titulo}},\ std::string\ \mbox{\hyperlink{classMusica_aa2e92ffdcbabd86f666cfda756348eb7}{autor}}\ =\ \textcolor{stringliteral}{"{}"{}});}
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//altera\ o\ autor\ da\ música.}}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ setAutor(std::string\ autor);}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//sobrecarga\ do\ operador\ de\ igualdade.}}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\mbox{\hyperlink{classMusica}{Musica}}\ \&outra);}
-\DoxyCodeLine{00035\ \ \ \ \ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//sobrecarga\ do\ operador\ de\ inserção.}}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMusica}{Musica}}\&\ musica);}
-\DoxyCodeLine{00038\ \};}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00035\ \ \ std::string\ \mbox{\hyperlink{classMusica_a5ba8b9a429dc298867b3254d6e336f74}{getTitulo}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ std::string\ \mbox{\hyperlink{classMusica_a7f7a562b5996715777df2d3abb2d8e8e}{getAutor}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMusica_aa7ad962a29fcc02ea6a95d5b99e21503}{setTitulo}}(std::string\ \mbox{\hyperlink{classMusica_a18a3f34e8fc4f2187c8b925a9ff01891}{titulo}});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMusica_aa61a86c57f18ba3f6d32bb7f171c1c45}{setAutor}}(std::string\ \mbox{\hyperlink{classMusica_aa2e92ffdcbabd86f666cfda756348eb7}{autor}});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMusica_a6c7abbcf64d017b810c729b3186b073e}{operator==}}(\mbox{\hyperlink{classMusica}{Musica}}\ \&outra);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classMusica_a5bee4b61a003310685ce2e534e56995c}{operator<<}}(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMusica}{Musica}}\ \&musica);}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

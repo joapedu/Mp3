@@ -1,32 +1,158 @@
 \doxysection{Referência do \texorpdfstring{$<$}{<}em\texorpdfstring{$>$}{>}Template\texorpdfstring{$<$}{<}/em\texorpdfstring{$>$}{>} da Classe No\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}
 \hypertarget{classNo}{}\label{classNo}\index{No$<$ T $>$@{No$<$ T $>$}}
+
+
+{\ttfamily \#include $<$no.\+hpp$>$}
+
 \doxysubsubsection*{Membros Públicos}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classNo_a1c60724e8305eed0eeec7cc748108482}\label{classNo_a1c60724e8305eed0eeec7cc748108482} 
-{\bfseries No} (const T \&valor)
+\mbox{\hyperlink{classNo_a036bbd26bb76763d3b915c8152ea2449}{No}} ()=default
 \item 
-\Hypertarget{classNo_ad80ca54680df844c4db210fec8dbd932}\label{classNo_ad80ca54680df844c4db210fec8dbd932} 
-T \& {\bfseries get\+Valor} ()
+\mbox{\hyperlink{classNo_a1c60724e8305eed0eeec7cc748108482}{No}} (const T \&\mbox{\hyperlink{classNo_ad4f5d2d85ae3e84f1a227b28e90e79df}{valor}})
 \item 
-\Hypertarget{classNo_a9889880f1de3f95d87e638f1fd4c5297}\label{classNo_a9889880f1de3f95d87e638f1fd4c5297} 
-\mbox{\hyperlink{classNo}{No}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Proximo} ()
+T \& \mbox{\hyperlink{classNo_ad80ca54680df844c4db210fec8dbd932}{get\+Valor}} ()
 \item 
-\Hypertarget{classNo_a3bb2f1c77fa3837cb2d9d930ae8508b7}\label{classNo_a3bb2f1c77fa3837cb2d9d930ae8508b7} 
-void {\bfseries set\+Valor} (T valor)
+\mbox{\hyperlink{classNo}{No}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classNo_a9889880f1de3f95d87e638f1fd4c5297}{get\+Proximo}} ()
 \item 
-\Hypertarget{classNo_a1a1896dd72a9d6e40f8cf6fc64256a81}\label{classNo_a1a1896dd72a9d6e40f8cf6fc64256a81} 
-void {\bfseries set\+Proximo} (\mbox{\hyperlink{classNo}{No}}$<$ T $>$ \texorpdfstring{$\ast$}{*}proximo)
+void \mbox{\hyperlink{classNo_a3bb2f1c77fa3837cb2d9d930ae8508b7}{set\+Valor}} (T \mbox{\hyperlink{classNo_ad4f5d2d85ae3e84f1a227b28e90e79df}{valor}})
+\item 
+void \mbox{\hyperlink{classNo_a1a1896dd72a9d6e40f8cf6fc64256a81}{set\+Proximo}} (\mbox{\hyperlink{classNo}{No}}$<$ T $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classNo_ad272c160e981360f99d0745877a72ba2}{proximo}})
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classNo_ad4f5d2d85ae3e84f1a227b28e90e79df}\label{classNo_ad4f5d2d85ae3e84f1a227b28e90e79df} 
 T {\bfseries valor}
-\item 
+\begin{DoxyCompactList}\small\item\em O valor armazenado no nó. \end{DoxyCompactList}\item 
 \Hypertarget{classNo_ad272c160e981360f99d0745877a72ba2}\label{classNo_ad272c160e981360f99d0745877a72ba2} 
 \mbox{\hyperlink{classNo}{No}}$<$ T $>$ \texorpdfstring{$\ast$}{*} {\bfseries proximo}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o próximo nó na lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+\subsubsection*{template$<$typename T$>$\newline
+class No$<$ T $>$}
+Classe do nó da lista encadeada. 
+\begin{DoxyTemplParams}{Parâmetros do template}
+{\em T} & O tipo de dado que o nó irá armazenar. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Construtores e Destrutores}
+\Hypertarget{classNo_a036bbd26bb76763d3b915c8152ea2449}\label{classNo_a036bbd26bb76763d3b915c8152ea2449} 
+\index{No$<$ T $>$@{No$<$ T $>$}!No@{No}}
+\index{No@{No}!No$<$ T $>$@{No$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{No()}{No()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNo}{No}}$<$ T $>$\mbox{\hyperlink{classNo}{\+::\+No}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Construtor padrão do nó. \Hypertarget{classNo_a1c60724e8305eed0eeec7cc748108482}\label{classNo_a1c60724e8305eed0eeec7cc748108482} 
+\index{No$<$ T $>$@{No$<$ T $>$}!No@{No}}
+\index{No@{No}!No$<$ T $>$@{No$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{No()}{No()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNo}{No}}$<$ T $>$\mbox{\hyperlink{classNo}{\+::\+No}} (\begin{DoxyParamCaption}\item[{const T \&}]{valor }\end{DoxyParamCaption})}
+
+Construtor que recebe o valor a ser colocado no nó. 
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & O valor a ser armazenado no nó.\\
+\hline
+\end{DoxyParams}
+Construtor que recebe o valor a ser colocado no nó. 
+\begin{DoxyTemplParams}{Parâmetros do template}
+{\em T} & O tipo de dado que o nó irá armazenar. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & O valor a ser armazenado no nó. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{classNo_a9889880f1de3f95d87e638f1fd4c5297}\label{classNo_a9889880f1de3f95d87e638f1fd4c5297} 
+\index{No$<$ T $>$@{No$<$ T $>$}!getProximo@{getProximo}}
+\index{getProximo@{getProximo}!No$<$ T $>$@{No$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getProximo()}{getProximo()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNo}{No}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classNo}{No}}$<$ T $>$\+::get\+Proximo}
+
+Obtém o ponteiro para o próximo nó. \begin{DoxyReturn}{Retorna}
+O ponteiro para o próximo nó na lista.
+\end{DoxyReturn}
+Obtém o ponteiro para o próximo nó. 
+\begin{DoxyTemplParams}{Parâmetros do template}
+{\em T} & O tipo de dado que o nó armazena. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Retorna}
+O ponteiro para o próximo nó na lista. 
+\end{DoxyReturn}
+\Hypertarget{classNo_ad80ca54680df844c4db210fec8dbd932}\label{classNo_ad80ca54680df844c4db210fec8dbd932} 
+\index{No$<$ T $>$@{No$<$ T $>$}!getValor@{getValor}}
+\index{getValor@{getValor}!No$<$ T $>$@{No$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{classNo}{No}}$<$ T $>$\+::get\+Valor}
+
+Obtém o valor do nó atual. \begin{DoxyReturn}{Retorna}
+Uma referência ao valor armazenado no nó.
+\end{DoxyReturn}
+Obtém o valor do nó atual. 
+\begin{DoxyTemplParams}{Parâmetros do template}
+{\em T} & O tipo de dado que o nó armazena. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Retorna}
+Uma referência ao valor armazenado no nó. 
+\end{DoxyReturn}
+\Hypertarget{classNo_a1a1896dd72a9d6e40f8cf6fc64256a81}\label{classNo_a1a1896dd72a9d6e40f8cf6fc64256a81} 
+\index{No$<$ T $>$@{No$<$ T $>$}!setProximo@{setProximo}}
+\index{setProximo@{setProximo}!No$<$ T $>$@{No$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setProximo()}{setProximo()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classNo}{No}}$<$ T $>$\+::set\+Proximo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNo}{No}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{proximo }\end{DoxyParamCaption})}
+
+Altera o ponteiro para o próximo nó. 
+\begin{DoxyParams}{Parâmetros}
+{\em proximo} & O novo ponteiro para o próximo nó na lista.\\
+\hline
+\end{DoxyParams}
+Altera o ponteiro para o próximo nó. 
+\begin{DoxyTemplParams}{Parâmetros do template}
+{\em T} & O tipo de dado que o nó armazena. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parâmetros}
+{\em proximo} & O novo ponteiro para o próximo nó na lista. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classNo_a3bb2f1c77fa3837cb2d9d930ae8508b7}\label{classNo_a3bb2f1c77fa3837cb2d9d930ae8508b7} 
+\index{No$<$ T $>$@{No$<$ T $>$}!setValor@{setValor}}
+\index{setValor@{setValor}!No$<$ T $>$@{No$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classNo}{No}}$<$ T $>$\+::set\+Valor (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})}
+
+Altera o valor do nó atual. 
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & O novo valor a ser armazenado no nó.\\
+\hline
+\end{DoxyParams}
+Altera o valor do nó atual. 
+\begin{DoxyTemplParams}{Parâmetros do template}
+{\em T} & O tipo de dado que o nó armazena. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & O novo valor a ser armazenado no nó. \\
+\hline
+\end{DoxyParams}
 
 
 A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}

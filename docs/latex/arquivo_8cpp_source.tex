@@ -1,0 +1,73 @@
+\doxysection{arquivo.\+cpp}
+\hypertarget{arquivo_8cpp_source}{}\label{arquivo_8cpp_source}\index{src/arquivo.cpp@{src/arquivo.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../include/listaencadeada.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../include/menu.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../include/musica.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../include/no.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../include/playlist.hpp"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ parseFile(std::ifstream\ \&in\_file,\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<Musica>}}\ \&songs,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<Playlist>}}\ \&playlists)\ \{}
+\DoxyCodeLine{00022\ \ \ std::string\ linha;}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordflow}{while}\ (std::getline(in\_file,\ linha))\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ std::istringstream\ iss\{linha\};}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ playlist\_titulo;}
+\DoxyCodeLine{00026\ \ \ \ \ std::getline(iss,\ playlist\_titulo,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classPlaylist}{Playlist}}\ playlist\{playlist\_titulo\};}
+\DoxyCodeLine{00029\ \ \ \ \ playlists.\mbox{\hyperlink{classListaEncadeada_ad746621a572f756397a22f6d5f1aeefb}{adicionar}}(playlist);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ song\_string;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(iss,\ song\_string,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ std::istringstream\ iss\_song\{song\_string\};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ std::string\ musica\_titulo;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ std::string\ musica\_autor;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ std::getline(iss\_song,\ musica\_titulo,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ std::getline(iss\_song,\ musica\_autor);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \mbox{\hyperlink{classMusica}{Musica}}\ \mbox{\hyperlink{classMusica}{Musica}}\{musica\_titulo,\ musica\_autor\};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ songs.\mbox{\hyperlink{classListaEncadeada_ad746621a572f756397a22f6d5f1aeefb}{adicionar}}(\mbox{\hyperlink{classMusica}{Musica}});}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ playlists.\mbox{\hyperlink{classListaEncadeada_a8e108617a55c5aa4c3d9943caa56df78}{buscarValor}}(playlist)-\/>adicionarMusica(\mbox{\hyperlink{classMusica}{Musica}});}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \}}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ writeFile(std::ofstream\ \&out\_file,\ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<Musica>}}\ \&musicas,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classListaEncadeada}{ListaEncadeada<Playlist>}}\ \&playlists)\ \{}
+\DoxyCodeLine{00057\ \ \ \textcolor{keyword}{auto}\ plRunner\ =\ playlists.\mbox{\hyperlink{classListaEncadeada_a795716a03c99066a66ef4fd68476ddb4}{getCabeca}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordflow}{while}\ (plRunner\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{auto}\ currPl\ =\ plRunner-\/>getValor();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ out\_file\ <<\ currPl.getNome()\ <<\ \textcolor{charliteral}{';'};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{auto}\ songRunner\ =\ currPl.getMusicas().getCabeca();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{while}\ (songRunner\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ currSong\ =\ songRunner-\/>getValor();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ out\_file\ <<\ currSong.getTitulo()\ <<\ \textcolor{charliteral}{':'};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ out\_file\ <<\ currSong.getAutor();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (songRunner-\/>getProximo()\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ out\_file\ <<\ \textcolor{charliteral}{','};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ songRunner\ =\ songRunner-\/>getProximo();}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ out\_file\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00080\ \ \ \ \ plRunner\ =\ plRunner-\/>getProximo();}
+\DoxyCodeLine{00081\ \ \ \}}
+\DoxyCodeLine{00082\ \}}
+
+\end{DoxyCode}
